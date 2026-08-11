@@ -37,7 +37,7 @@ try:
         recent_data = df.tail(10).to_string(index=False)
         prompt = f"Analyze these recent oil prices and provide a concise 2-sentence market summary:\n\n{recent_data}"
 
-        client = genai.Client(api_key=os.getenv('genai'))
+        
         
         with st.spinner("Analyzing market data..."):
             response = client.models.generate_content(
