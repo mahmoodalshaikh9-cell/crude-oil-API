@@ -6,7 +6,8 @@ import pandas as pd
 import streamlit as st
 from dotenv import load_dotenv
 from google import genai
-
+api_key = st.secrets.get("GENAI_API_KEY") 
+client = genai.Client(api_key=api_key)
 load_dotenv()
 
 st.title("Oil Price Tracker & AI Insights")
